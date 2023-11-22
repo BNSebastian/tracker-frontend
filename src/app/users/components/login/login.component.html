@@ -1,0 +1,33 @@
+<form
+  *ngIf="!accountService.isAuthenticated()"
+  #loginForm="ngForm"
+  (ngSubmit)="login()"
+  autocomplete="off"
+  class="container"
+>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input matInput [(ngModel)]="model.email" name="email" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Enter your password</mat-label>
+    <input
+      [(ngModel)]="model.password"
+      name="password"
+      matInput
+      [type]="hide ? 'password' : 'text'"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" color="primary">LOGIN</button>
+</form>

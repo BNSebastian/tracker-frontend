@@ -1,0 +1,41 @@
+<form #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+  <hr />
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      name="firstname"
+      [(ngModel)]="model.firstname"
+      placeholder="Washington"
+    />
+    <input
+      type="text"
+      class="form-control"
+      name="lastname"
+      [(ngModel)]="model.lastname"
+      placeholder="George"
+    />
+    <input
+      type="text"
+      class="form-control"
+      name="email"
+      [(ngModel)]="model.email"
+      placeholder="george.washington@presidents.com"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      name="password"
+      [(ngModel)]="model.password"
+      placeholder="password"
+    />
+  </div>
+  <div class="form-group text-center">
+    <button class="btn btn-success mr-2" type="submit">register</button>
+    <button (click)="cancel()" class="btn btn-default mr-2" type="submit">
+      cancel
+    </button>
+  </div>
+</form>
