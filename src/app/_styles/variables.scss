@@ -65,6 +65,7 @@ $spacing: (
 );
 
 $navbar: (
+  "width": 5rem,
   "backgroundColor":
     map-get(
       $map: $themeColor,
@@ -85,4 +86,16 @@ $navbar: (
       $map: $fontColor,
       $key: "light",
     ),
+);
+
+$padding: (
+  "small": 0.5rem,
+  "medium": 1rem,
+  "large": 1.5rem,
+);
+
+$margin: (
+  "small": 0.5rem,
+  "medium": 1rem,
+  "large": 1.5rem,
 );

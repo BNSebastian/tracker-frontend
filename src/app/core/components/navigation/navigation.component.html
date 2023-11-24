@@ -1,18 +1,39 @@
-<header>
-  <nav>
+<nav class="navbar">
+  <ul class="navbar-nav">
     <ng-container *ngIf="accountService.isAuthenticated()">
-      <a [routerLink]="['']"><i class="fa-solid fa-bars"></i>Home</a>
-      <a [routerLink]="['/trackers']">Trackers</a>
-      <a [routerLink]="['']" (click)="logout()">Log out</a>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['']"><span>Home</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/trackers']"
+          ><span>Trackers</span></a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['']" (click)="logout()"
+          ><span>Log out</span></a
+        >
+      </li>
     </ng-container>
 
     <ng-container *ngIf="!accountService.isAuthenticated()">
-      <ul>
-        <li><a [routerLink]="['']">Home</a></li>
-        <li><a [routerLink]="['/users/signup']">Register</a></li>
-        <li><a [routerLink]="['/users/login']">Log in</a></li>
-      </ul>
-    </ng-container>
-  </nav>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['']"><span>Home</span></a>
+      </li>
 
-</header>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/users/signup']"
+          ><span>Register</span></a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/users/login']"
+          ><span>Log in</span></a
+        >
+      </li>
+    </ng-container>
+  </ul>
+</nav>

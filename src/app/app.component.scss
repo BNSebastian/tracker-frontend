@@ -1,2 +1,7 @@
 @import "src/app/_styles/variables.scss";
 @import "src/app/_styles/mixins.scss";
+
+main {
+  margin-left: map-get($map: $navbar, $key: width);
+  padding: map-get($map: $padding, $key: medium);
+}

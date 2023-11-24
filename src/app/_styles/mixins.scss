@@ -1,12 +1,30 @@
+@import "src/app/_styles/variables.scss";
+
+@mixin flexCenterColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @mixin flexCenter {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 @mixin flexSpaceBetween {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@mixin resetPaddingAndMargin {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin resetListStyle {
+  list-style: none;
 }
 
 @mixin button {
