@@ -14,8 +14,8 @@ import { MaterialModule } from './_modules/material.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { LogicModule } from './logic/logic.module';
-import { UsersModule } from './users/modules/users.module';
-import { AuthInterceptorProvider } from './users/services/auth.interceptor';
+import { UsersModule } from './security/modules/users.module';
+import { AuthInterceptorProvider } from './security/services/auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,9 +25,9 @@ import { AuthInterceptorProvider } from './users/services/auth.interceptor';
     LogicModule,
     AppRoutingModule,
     FormsModule,
-    MaterialModule,
     BrowserAnimationsModule,
     BrowserModule,
+    MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,

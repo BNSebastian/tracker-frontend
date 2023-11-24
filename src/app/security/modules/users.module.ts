@@ -1,5 +1,3 @@
-import { MaterialModule } from 'src/app/_modules/material.module';
-
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,13 +9,7 @@ import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent],
-  imports: [
-    CommonModule,
-    UsersRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MaterialModule,
-  ],
+  imports: [CommonModule, UsersRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [AuthGuard],
 })
 export class UsersModule {}

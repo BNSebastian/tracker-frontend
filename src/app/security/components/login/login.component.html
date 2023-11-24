@@ -1,0 +1,28 @@
+<form
+  *ngIf="!accountService.isAuthenticated()"
+  #loginForm="ngForm"
+  (ngSubmit)="login()"
+  autocomplete="off"
+>
+  <div>
+    <label>Enter your email</label>
+    <input
+      [(ngModel)]="model.email"
+      name="email"
+      type="text"
+      placeholder="e-mail"
+    />
+  </div>
+
+  <div>
+    <label>Enter your password</label>
+    <input
+      [(ngModel)]="model.password"
+      name="password"
+      type="password"
+      placeholder="password"
+    />
+  </div>
+
+  <button type="submit">LOGIN</button>
+</form>

@@ -7,14 +7,14 @@ import { TrackerCreateComponent } from '../logic/tracker/tracker-create/tracker-
 import { TrackerListComponent } from '../logic/tracker/tracker-list/tracker-list.component';
 import { TrackerUpdateComponent } from '../logic/tracker/tracker-update/tracker-update.component';
 import { TrackerComponent } from '../logic/tracker/tracker.component';
-import { AuthGuard } from '../users/guard/auth.guard';
+import { AuthGuard } from '../security/guard/auth.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   {
     path: 'users',
     loadChildren: () =>
-      import('../users/modules/users.module').then((m) => m.UsersModule),
+      import('../security/modules/users.module').then((m) => m.UsersModule),
   },
   { path: 'trackers', component: TrackerComponent, canActivate: [AuthGuard] },
   { path: 'trackers/create', component: TrackerCreateComponent },

@@ -1,81 +1,18 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-  >
-    <mat-toolbar><mat-icon>menu_book</mat-icon></mat-toolbar>
-    <mat-nav-list *ngIf="accountService.isAuthenticated()">
-      <a mat-list-item [routerLink]="['']">Home</a>
-      <a mat-list-item [routerLink]="['/trackers']">Trackers</a>
-      <a mat-list-item [routerLink]="['']" (click)="logout()">Log out</a>
-    </mat-nav-list>
-    <mat-nav-list *ngIf="!accountService.isAuthenticated()">
-      <a mat-list-item [routerLink]="['']">Home</a>
-      <a mat-list-item [routerLink]="['/users/signup']">Register</a>
-      <a mat-list-item [routerLink]="['/users/login']">Log in</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>Activity tracker</span>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-<!-- <header>
-  <mat-toolbar color="primary">
+<header>
+  <nav>
     <ng-container *ngIf="accountService.isAuthenticated()">
-      <a mat-raised-button color="accent" [routerLink]="['']">
-        <mat-icon>home</mat-icon>
-        Home
-      </a>
-
-      <a mat-raised-button color="accent" [routerLink]="['/trackers']">
-        <mat-icon>analytics</mat-icon>
-        Trackers
-      </a>
-
-      <a
-        mat-raised-button
-        color="accent"
-        [routerLink]="['']"
-        (click)="logout()"
-      >
-        <mat-icon>logout</mat-icon>
-        Log out
-      </a>
+      <a [routerLink]="['']"><i class="fa-solid fa-bars"></i>Home</a>
+      <a [routerLink]="['/trackers']">Trackers</a>
+      <a [routerLink]="['']" (click)="logout()">Log out</a>
     </ng-container>
 
     <ng-container *ngIf="!accountService.isAuthenticated()">
-      <a mat-raised-button color="accent" [routerLink]="['']">
-        <mat-icon>home</mat-icon>
-        Home
-      </a>
-
-      <a mat-raised-button color="accent" [routerLink]="['/users/signup']">
-        <mat-icon>person_add</mat-icon>
-        Register
-      </a>
-
-      <a mat-raised-button color="accent" [routerLink]="['/users/login']">
-        <mat-icon>login</mat-icon>
-        Log in
-      </a>
+      <ul>
+        <li><a [routerLink]="['']">Home</a></li>
+        <li><a [routerLink]="['/users/signup']">Register</a></li>
+        <li><a [routerLink]="['/users/login']">Log in</a></li>
+      </ul>
     </ng-container>
-  </mat-toolbar>
-</header> -->
+  </nav>
+
+</header>

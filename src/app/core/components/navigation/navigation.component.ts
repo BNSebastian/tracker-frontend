@@ -8,7 +8,7 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { frontendUrl } from '../../../_environments/frontend';
-import { AccountService } from '../../../users/services/account.service';
+import { AccountService } from '../../../security/services/account.service';
 
 @Component({
   selector: 'app-navigation',
