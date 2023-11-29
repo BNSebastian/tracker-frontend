@@ -1,28 +1,53 @@
-<form
-  *ngIf="!accountService.isAuthenticated()"
-  #loginForm="ngForm"
-  (ngSubmit)="login()"
-  autocomplete="off"
->
-  <div>
-    <label>Enter your email</label>
-    <input
-      [(ngModel)]="model.email"
-      name="email"
-      type="text"
-      placeholder="e-mail"
+<div class="login-container">
+  <!-- logo and prompt -->
+  <div class="prompt">
+    <img
+      class="mx-auto h-10 w-auto"
+      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+      alt="Your Company"
     />
+    <h2
+      class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
+    >
+      Sign in to your account
+    </h2>
   </div>
 
-  <div>
-    <label>Enter your password</label>
-    <input
-      [(ngModel)]="model.password"
-      name="password"
-      type="password"
-      placeholder="password"
-    />
-  </div>
+  <div class="form-container">
+    <form
+      *ngIf="!accountService.isAuthenticated()"
+      #loginForm="ngForm"
+      (ngSubmit)="login()"
+      autocomplete="off"
+      class="form"
+    >
+      <div class="email">
+        <label for="email">Email address</label>
+        <input
+          [(ngModel)]="model.email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+        />
+      </div>
 
-  <button type="submit">LOGIN</button>
-</form>
+      <div class="password">
+        <div class="label-and-recovery">
+          <label for="password">Password</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <input
+          [(ngModel)]="model.password"
+          name="password"
+          type="password"
+          required
+        />
+      </div>
+
+      <div class="submit-button">
+        <button type="submit">Sign in</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -8,11 +8,8 @@ $screenWidth: (
 );
 
 $themeColor: (
-  "primary": #d9c3a9,
-  "secondary": #f29d52,
-  "tertiary": #d9763d,
-  "quaternary": #a64d2d,
-  "quinary": #402015,
+  "primary": lightblue,
+  "secondary": darkblue,
   "success": lightblue,
   "info": teal,
   "warning": yellow,
@@ -65,27 +62,37 @@ $spacing: (
 );
 
 $navbar: (
-  "width": 5rem,
+  "height": 3rem,
   "backgroundColor":
     map-get(
       $map: $themeColor,
-      $key: secondary,
+      $key: primary,
     ),
   "buttonColor":
     map-get(
       $map: $themeColor,
-      $key: tertiary,
+      $key: secondary,
     ),
-  "textColor":
-    map-get(
-      $map: $fontColor,
-      $key: "dark",
-    ),
-  "textColorHovered":
-    map-get(
-      $map: $fontColor,
-      $key: "light",
-    ),
+  "highlightedButtonColor": (
+    color:
+      rgba(
+        map-get(
+          $map: $themeColor,
+          $key: secondary,
+        ),
+        0.5
+      ),
+    "textColor":
+      map-get(
+        $map: $fontColor,
+        $key: "dark",
+      ),
+    "textColorHovered":
+      map-get(
+        $map: $fontColor,
+        $key: "light",
+      ),
+  ),
 );
 
 $padding: (

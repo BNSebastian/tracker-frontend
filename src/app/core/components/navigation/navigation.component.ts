@@ -16,6 +16,7 @@ import { AccountService } from '../../../security/services/account.service';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent {
+  navbarOpen = false;
   model: any = {};
   jwtToken: any = '';
 
@@ -37,5 +38,11 @@ export class NavigationComponent {
   logout() {
     this.accountService.logout();
     this.router.navigateByUrl(frontendUrl.home);
+  }
+
+  toggleNavbar() {
+    // event.preventDefault(); // Prevent default action of the anchor tag
+    this.navbarOpen = !this.navbarOpen;
+    console.log(`hamburger pressed, the flag value is ${this.navbarOpen}`);
   }
 }
