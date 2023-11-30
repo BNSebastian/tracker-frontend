@@ -4,7 +4,7 @@ import { backendUrl } from 'src/app/_environments/backend';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActivityCreate, ActivityRead } from '../models/activity';
+import { Activity, ActivityCreate, ActivityRead } from '../models/activity';
 
 @Injectable({
   providedIn: 'root',
@@ -23,8 +23,21 @@ export class ActivityService {
     );
   }
 
-  getAll(): Observable<ActivityRead[]> {
-    return this.http.get<ActivityRead[]>(backendUrl.activity);
+  getAll(): Observable<Activity[]> {
+    return this.http.get<Activity[]>(backendUrl.activity);
+  }
+
+  getById(id: number): Observable<Activity> {
+    return this.http.get<Activity>(`${backendUrl.activity}/${id}`);
+  }
+
+  update(entity: Activity): Observable<Activity> {
+    const url = `${backendUrl.activity}/${entity.id}`;
+    return this.http.put<Activity>(url, entity).pipe(
+      catchError((error: any) => {
+        throw error;
+      })
+    );
   }
 
   deleteById(id: number): Observable<void> {

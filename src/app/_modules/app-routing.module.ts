@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'activity', component: ActivityComponent, canActivate: [AuthGuard] },
   { path: 'activity/create', component: ActivityCreateComponent },
   { path: 'activity/list', component: ActivityListComponent },
-  { path: 'activity/update', component: ActivityUpdateComponent },
+  { path: 'activity/:id', component: ActivityUpdateComponent },
   { path: 'trackers', component: TrackerComponent, canActivate: [AuthGuard] },
   { path: 'trackers/create', component: TrackerCreateComponent },
   { path: 'trackers/getAll', component: TrackerListComponent },

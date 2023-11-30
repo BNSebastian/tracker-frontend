@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { ActivityRead } from '../../models/activity';
 import { ActivityService } from '../../services/activity.service';
+import { backendUrl } from 'src/app/_environments/backend';
 
 @Component({
   selector: 'app-tracker-list',
@@ -29,7 +30,7 @@ export class ActivityListComponent {
   }
 
   editData(id: number) {
-    this.router.navigate(['/country', id]);
+    this.router.navigate([`${frontendUrl.activity}/${id}`]);
   }
 
   deleteData(id: number) {
