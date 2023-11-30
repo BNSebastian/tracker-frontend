@@ -3,8 +3,10 @@ export const backendUrl = {
   register: '',
   authenticate: '',
   tracker: '',
+  activity: '',
 };
 
 backendUrl.register = `${backendUrl.home}/auth/register`;
 backendUrl.authenticate = `${backendUrl.home}/auth/authenticate`;
 backendUrl.tracker = `${backendUrl.home}/tracker`;
+backendUrl.activity = `${backendUrl.home}/activity`;
