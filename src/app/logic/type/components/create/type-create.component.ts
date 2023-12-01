@@ -9,22 +9,21 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-
-import { TrackerCreate } from '../models/type';
-import { TrackerService } from '../services/tracker.service';
+import { TypeService } from '../../services/type.service';
+import { TypeCreate } from '../../models/type';
 
 @Component({
-  selector: 'app-tracker-create',
-  templateUrl: './tracker-create.component.html',
-  styleUrls: ['./tracker-create.component.scss'],
+  selector: 'app-type-create',
+  templateUrl: './type-create.component.html',
+  styleUrls: ['./type-create.component.scss'],
 })
-export class TrackerCreateComponent {
+export class TypeCreateComponent {
   form: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private trackerService: TrackerService,
-    private router: Router
+    private router: Router,
+    private typeService: TypeService
   ) {
     this.form = fb.group({
       name: ['', Validators.required],
@@ -33,21 +32,21 @@ export class TrackerCreateComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      const tracker: TrackerCreate = {
+      const type: TypeCreate = {
         name: this.form.value.name,
       };
 
-      this.trackerService.create(tracker).subscribe(
+      this.typeService.create(type).subscribe(
         (response) => {
           console.log('Response body:', response);
         },
         (error) => {
-          console.log(tracker);
+          console.log(type);
           console.log('API error:', error);
         }
       );
 
-      this.router.navigateByUrl(frontendUrl.trackers);
+      this.router.navigateByUrl(frontendUrl.type);
     }
   }
 }

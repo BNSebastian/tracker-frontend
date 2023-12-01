@@ -7,7 +7,6 @@ import { TrackerCreateComponent } from './tracker/tracker-create/tracker-create.
 import { TrackerListComponent } from './tracker/tracker-list/tracker-list.component';
 import { TrackerUpdateComponent } from './tracker/tracker-update/tracker-update.component';
 import { TrackerComponent } from './tracker/tracker.component';
-import { ActivityModule } from './activity/modules/activity.module';
 
 @NgModule({
   declarations: [

@@ -1,0 +1,97 @@
+<section
+  class="flex flex-row justify-center antialiased bg-gray-50 text-gray-600 min-h-screen p-4"
+>
+  <a [routerLink]="[createUrl]">
+    <div class="h-full">
+      <!-- Card -->
+      <div class="max-w-xs mx-auto">
+        <div
+          class="flex flex-col h-full bg-white shadow-lg rounded-lg overflow-hidden"
+        >
+          <!-- Image -->
+          <a class="block focus:outline-none focus-visible:ring-2" href="#0">
+            <figure class="relative h-0 pb-[56.25%] overflow-hidden">
+              <img
+                class="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition duration-700 ease-out"
+                src="https://res.cloudinary.com/dc6deairt/image/upload/v1638284256/course-img_tf0g8c.png"
+                width="320"
+                height="180"
+                alt="Course"
+              />
+            </figure>
+          </a>
+          <!-- Card Content -->
+          <div class="flex-grow flex flex-col p-5">
+            <!-- Card body -->
+            <div class="flex-grow">
+              <!-- Header -->
+              <header class="mb-3">
+                <a
+                  class="block focus:outline-none focus-visible:ring-2"
+                  href="#0"
+                >
+                  <h3
+                    class="text-[22px] text-gray-900 font-extrabold leading-snug"
+                  >
+                    Create a new type
+                  </h3>
+                </a>
+              </header>
+              <!-- Content -->
+              <div class="mb-8">
+                <p>Use an existing preset to define a new type.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <a [routerLink]="[listUrl]">
+    <div class="h-full ml-4">
+      <!-- Card -->
+      <div class="max-w-xs mx-auto">
+        <div
+          class="flex flex-col h-full bg-white shadow-lg rounded-lg overflow-hidden"
+        >
+          <!-- Image -->
+          <a class="block focus:outline-none focus-visible:ring-2" href="#0">
+            <figure class="relative h-0 pb-[56.25%] overflow-hidden">
+              <img
+                class="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition duration-700 ease-out"
+                src="https://res.cloudinary.com/dc6deairt/image/upload/v1638284256/course-img_tf0g8c.png"
+                width="320"
+                height="180"
+                alt="Course"
+              />
+            </figure>
+          </a>
+          <!-- Card Content -->
+          <div class="flex-grow flex flex-col p-5">
+            <!-- Card body -->
+            <div class="flex-grow">
+              <!-- Header -->
+              <header class="mb-3">
+                <a
+                  class="block focus:outline-none focus-visible:ring-2"
+                  href="#0"
+                >
+                  <h3
+                    class="text-[22px] text-gray-900 font-extrabold leading-snug"
+                  >
+                    List existing types
+                  </h3>
+                </a>
+              </header>
+              <!-- Content -->
+              <div class="mb-8">
+                <p>See a list of your already defined types.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</section>

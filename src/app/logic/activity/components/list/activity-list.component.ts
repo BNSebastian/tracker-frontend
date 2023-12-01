@@ -8,7 +8,7 @@ import { ActivityService } from '../../services/activity.service';
 import { backendUrl } from 'src/app/_environments/backend';
 
 @Component({
-  selector: 'app-tracker-list',
+  selector: 'app-activity-list',
   templateUrl: './activity-list.component.html',
   styleUrls: ['./activity-list.component.scss'],
 })

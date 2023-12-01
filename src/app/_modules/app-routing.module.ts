@@ -12,6 +12,10 @@ import { ActivityCreateComponent } from '../logic/activity/components/create/act
 import { ActivityListComponent } from '../logic/activity/components/list/activity-list.component';
 import { ActivityUpdateComponent } from '../logic/activity/components/update/activity-update.component';
 import { ActivityComponent } from '../logic/activity/activity.component';
+import { TypeComponent } from '../logic/type/type.component';
+import { TypeCreateComponent } from '../logic/type/components/create/type-create.component';
+import { TypeListComponent } from '../logic/type/components/list/type-list.component';
+import { TypeUpdateComponent } from '../logic/type/components/update/type-update.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -20,17 +24,17 @@ const routes: Routes = [
     loadChildren: () =>
       import('../security/modules/users.module').then((m) => m.UsersModule),
   },
-  // {
-  //   path: 'activity',
-  //   loadChildren: () =>
-  //     import('../logic/activity/modules/activity.module').then(
-  //       (m) => m.ActivityModule
-  //     ),
-  // },
+  // activity
   { path: 'activity', component: ActivityComponent, canActivate: [AuthGuard] },
   { path: 'activity/create', component: ActivityCreateComponent },
   { path: 'activity/list', component: ActivityListComponent },
   { path: 'activity/:id', component: ActivityUpdateComponent },
+  // type
+  { path: 'type', component: TypeComponent },
+  { path: 'type/create', component: TypeCreateComponent },
+  { path: 'type/list', component: TypeListComponent },
+  { path: 'type/:id', component: TypeUpdateComponent },
+  // tracker
   { path: 'trackers', component: TrackerComponent, canActivate: [AuthGuard] },
   { path: 'trackers/create', component: TrackerCreateComponent },
   { path: 'trackers/getAll', component: TrackerListComponent },

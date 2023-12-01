@@ -1,9 +1,13 @@
-export interface Type {
+export interface TypeCreate {
   name: string;
 }
 
 export interface Type {
   id: number;
   name: string;
-  type: Type;
+}
+
+export interface TypeRead {
+  id: number;
+  name: string;
 }
