@@ -12,8 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './_modules/app-routing.module';
 import { MaterialModule } from './_modules/material.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { LogicModule } from './logic/logic.module';
+import { CoreModule } from './navigation/core.module';
 import { UsersModule } from './security/modules/users.module';
 import { AuthInterceptorProvider } from './security/services/auth.interceptor';
 import { ActivityModule } from './logic/activity/modules/activity.module';
@@ -23,7 +22,6 @@ import { TypeModule } from './logic/type/modules/type.module';
   imports: [
     UsersModule,
     CoreModule,
-    LogicModule,
     ActivityModule,
     TypeModule,
     AppRoutingModule,

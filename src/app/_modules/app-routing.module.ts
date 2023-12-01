@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from '../core/components/home/home.component';
-import { PageNotFoundComponent } from '../core/components/page-not-found/page-not-found.component';
-import { TrackerCreateComponent } from '../logic/tracker/tracker-create/tracker-create.component';
-import { TrackerListComponent } from '../logic/tracker/tracker-list/tracker-list.component';
-import { TrackerUpdateComponent } from '../logic/tracker/tracker-update/tracker-update.component';
-import { TrackerComponent } from '../logic/tracker/tracker.component';
+import { HomeComponent } from '../navigation/home/home.component';
+import { PageNotFoundComponent } from '../security/components/page-not-found/page-not-found.component';
 import { AuthGuard } from '../security/guard/auth.guard';
 import { ActivityCreateComponent } from '../logic/activity/components/create/activity-create.component';
 import { ActivityListComponent } from '../logic/activity/components/list/activity-list.component';
@@ -34,12 +30,6 @@ const routes: Routes = [
   { path: 'type/create', component: TypeCreateComponent },
   { path: 'type/list', component: TypeListComponent },
   { path: 'type/:id', component: TypeUpdateComponent },
-  // tracker
-  { path: 'trackers', component: TrackerComponent, canActivate: [AuthGuard] },
-  { path: 'trackers/create', component: TrackerCreateComponent },
-  { path: 'trackers/getAll', component: TrackerListComponent },
-  { path: 'tracker/update', component: TrackerUpdateComponent },
-  { path: '**', component: PageNotFoundComponent },
   // {
   //   path: '',
   //   runGuardsAndResolvers: 'always',

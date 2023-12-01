@@ -7,8 +7,8 @@ import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { frontendUrl } from '../../../_environments/frontend';
-import { AccountService } from '../../../security/services/account.service';
+import { frontendUrl } from 'src/app/_environments/frontend';
+import { AccountService } from 'src/app/security/services/account.service';
 
 @Component({
   selector: 'app-navigation',
