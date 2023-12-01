@@ -59,7 +59,6 @@
 
           <ng-container *ngIf="accountService.isAuthenticated()">
             <a [routerLink]="['']">Home</a>
-            <a [routerLink]="['/trackers']">Trackers</a>
             <a [routerLink]="['/activity']">Activity</a>
             <a [routerLink]="['/type']">Type</a>
             <a [routerLink]="['']" (click)="logout()">Logout</a>
@@ -78,7 +77,6 @@
     </ng-container>
     <ng-container *ngIf="accountService.isAuthenticated()">
       <a [routerLink]="['']">Home</a>
-      <a [routerLink]="['/trackers']">Trackers</a>
       <a [routerLink]="['/activity']">Activity</a>
       <a [routerLink]="['/type']">Type</a>
       <a [routerLink]="['']" (click)="logout()">Logout</a>

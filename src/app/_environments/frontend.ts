@@ -3,8 +3,6 @@ export const frontendUrl = {
   users: '/users',
   logIn: '',
   signUp: '',
-  trackers: '/trackers',
-  trackersCreate: '',
   activity: '/activity',
   activityCreate: '',
   activityList: '',
@@ -15,7 +13,6 @@ export const frontendUrl = {
 
 frontendUrl.logIn = `${frontendUrl.users}/login`;
 frontendUrl.signUp = `${frontendUrl.users}/signUp`;
-frontendUrl.trackersCreate = `${frontendUrl.trackers}/create`;
 frontendUrl.activityCreate = `${frontendUrl.activity}/create`;
 frontendUrl.activityList = `${frontendUrl.activity}/list`;
 frontendUrl.typeCreate = `${frontendUrl.type}/create`;
