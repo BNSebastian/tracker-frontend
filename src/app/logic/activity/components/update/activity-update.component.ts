@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivityService } from '../../services/activity.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Activity, ActivityRead } from '../../models/activity';
+import { Activity, ActivityRead, ActivityUpdate } from '../../models/activity';
 import { frontendUrl } from 'src/app/_environments/frontend';
+import { TypeService } from 'src/app/logic/type/services/type.service';
+import { TypeRead } from 'src/app/logic/type/models/type';
 
 @Component({
   selector: 'app-activity-update',
@@ -12,20 +14,35 @@ import { frontendUrl } from 'src/app/_environments/frontend';
 })
 export class ActivityUpdateComponent {
   form!: FormGroup;
+  dropdownOptions?: any[];
 
   id?: number;
   name?: string;
+  type?: TypeRead;
+  description?: string;
+  startedOn?: string;
+  endedOn?: string;
 
   constructor(
     private service: ActivityService,
+    private typeService: TypeService,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit() {
+    // Fetch data for the dropdown from your service
+    this.typeService.getAll().subscribe((options: any[]) => {
+      this.dropdownOptions = options;
+    });
+
     this.form = new FormGroup({
       id: new FormControl({ value: '', disabled: true }),
       name: new FormControl(''),
+      type: new FormControl(''),
+      description: new FormControl(''),
+      startedOn: new FormControl(''),
+      endedOn: new FormControl(''),
     });
 
     this.loadData();
@@ -36,19 +53,28 @@ export class ActivityUpdateComponent {
     var idParam = this.activatedRoute.snapshot.paramMap.get('id');
     var id = idParam ? +idParam : 0;
 
-    // fetch the city from the server
     this.service.getById(id).subscribe((apiData) => {
       this.id = apiData.id;
       this.name = apiData.name;
+      this.type = apiData.type;
+      this.description = apiData.description;
+      this.startedOn = apiData.startedOn;
+      this.startedOn = apiData.endedOn;
       this.form.patchValue(apiData);
     });
   }
 
   onSubmit() {
-    const entry: Activity = {
+    const entry: ActivityUpdate = {
       id: +this.form.controls['id'].value,
       name: this.form.controls['name'].value,
+      type: this.form.controls['type'].value,
+      description: this.form.controls['description'].value,
+      startedOn: this.form.controls['startedOn'].value,
+      endedOn: this.form.controls['endedOn'].value,
     };
+
+    console.log(this.description);
 
     this.service.update(entry).subscribe(
       (response) => {
@@ -62,7 +88,7 @@ export class ActivityUpdateComponent {
     );
 
     setTimeout(() => {
-      this.router.navigate([frontendUrl.activity], {
+      this.router.navigate([frontendUrl.activityList], {
         skipLocationChange: true,
       });
     }, 300);

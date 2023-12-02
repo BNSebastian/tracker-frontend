@@ -17,18 +17,69 @@
       <div>
         <label
           for="name"
-          class="block text-sm font-medium leading-6 text-gray-900"
+          class="block text-sm font-bold leading-6 text-gray-900"
           >Name</label
         >
-        <div class="mt-2">
-          <input
-            formControlName="name"
-            id="name"
-            type="text"
-            class="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
+        <input
+          formControlName="name"
+          type="text"
+          class="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+        />
       </div>
+
+      <div>
+        <label
+          for="description"
+          class="block text-sm font-bold leading-6 text-gray-900"
+          >Description</label
+        >
+        <input
+          formControlName="description"
+          type="text"
+          class="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+        />
+      </div>
+
+      <div>
+        <label
+          for="type"
+          class="font-bold block text-sm leading-6 text-gray-900"
+          >Activity type</label
+        >
+        <select
+          formControlName="type"
+          class="p-2.5 mt-4 block w-full bg-white rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+        >
+          <option *ngFor="let option of dropdownOptions" [value]="option.id">
+            {{ option.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label for="startedOn" class="block text-sm font-bold mb-2"
+          >Start date</label
+        >
+        <input
+          required
+          formControlName="startedOn"
+          type="datetime-local"
+          class="w-full bg-white border border-gray-300 p-2 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="endedOn" class="block text-sm font-bold mb-2"
+          >End date</label
+        >
+        <input
+          required
+          formControlName="endedOn"
+          type="datetime-local"
+          class="w-full bg-white border border-gray-300 p-2 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+        />
+      </div>
+
       <div>
         <button
           type="submit"

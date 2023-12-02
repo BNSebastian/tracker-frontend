@@ -19,4 +19,14 @@ export interface ActivityRead {
   description: string;
   startedOn: string;
   endedOn: string;
+  timeElapsedInMinutes: number;
+}
+
+export interface ActivityUpdate {
+  id: number;
+  name: string;
+  type: TypeRead;
+  description: string;
+  startedOn: string;
+  endedOn: string;
 }
