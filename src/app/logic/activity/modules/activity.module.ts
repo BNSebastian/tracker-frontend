@@ -7,6 +7,7 @@ import { ActivityComponent } from '../activity.component';
 import { ActivityCreateComponent } from '../components/create/activity-create.component';
 import { ActivityListComponent } from '../components/list/activity-list.component';
 import { ActivityUpdateComponent } from '../components/update/activity-update.component';
+import { MaterialModule } from 'src/app/_modules/material.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,13 @@ import { ActivityUpdateComponent } from '../components/update/activity-update.co
     ActivityListComponent,
     ActivityUpdateComponent,
   ],
-  imports: [AppRoutingModule, CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+  ],
   exports: [
     ActivityComponent,
     ActivityCreateComponent,

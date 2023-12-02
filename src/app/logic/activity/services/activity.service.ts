@@ -15,8 +15,14 @@ export class ActivityService {
   create(entity: ActivityCreate, typeId: number): Observable<ActivityCreate> {
     const userId = this.cookieService.get('userId');
     const url = `${backendUrl.activity}/${userId}/${typeId}`;
+    const formattedDate = entity.startedOn.toString();
 
-    return this.http.post<ActivityCreate>(url, entity).pipe(
+    const entityWithFormattedDate: ActivityCreate = {
+      ...entity,
+      startedOn: formattedDate,
+    };
+
+    return this.http.post<ActivityCreate>(url, entityWithFormattedDate).pipe(
       catchError((error: any) => {
         throw error;
       })
