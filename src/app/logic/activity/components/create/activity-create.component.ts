@@ -31,6 +31,7 @@ export class ActivityCreateComponent implements OnInit {
   ) {
     this.form = formBuilder.group({
       name: ['', Validators.required],
+      description: ['', Validators.required],
       selectedId: ['', Validators.required],
     });
   }
@@ -47,6 +48,7 @@ export class ActivityCreateComponent implements OnInit {
       const typeId = this.form.get('selectedId')?.value;
       const activity: ActivityCreate = {
         name: this.form.value.name,
+        description: this.form.value.description,
       };
 
       this.activityService.create(activity, typeId).subscribe(
