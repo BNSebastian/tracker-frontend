@@ -68,13 +68,13 @@ export class ActivityUpdateComponent {
     const entry: ActivityUpdate = {
       id: +this.form.controls['id'].value,
       name: this.form.controls['name'].value,
-      type: this.form.controls['type'].value,
       description: this.form.controls['description'].value,
+      type: this.form.controls['type'].value,
       startedOn: this.form.controls['startedOn'].value,
       endedOn: this.form.controls['endedOn'].value,
     };
 
-    console.log(this.description);
+    console.log(entry);
 
     this.service.update(entry).subscribe(
       (response) => {

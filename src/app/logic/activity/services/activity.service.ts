@@ -37,7 +37,7 @@ export class ActivityService {
   }
 
   update(entity: ActivityUpdate): Observable<ActivityUpdate> {
-    const url = `${backendUrl.activity}/${entity.id}`;
+    const url = `${backendUrl.activity}`;
     return this.http.put<ActivityUpdate>(url, entity).pipe(
       catchError((error: any) => {
         throw error;
