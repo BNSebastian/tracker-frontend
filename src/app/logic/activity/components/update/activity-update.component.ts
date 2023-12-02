@@ -18,7 +18,6 @@ export class ActivityUpdateComponent {
 
   id?: number;
   name?: string;
-  type?: TypeRead;
   description?: string;
   startedOn?: string;
   endedOn?: string;
@@ -39,7 +38,6 @@ export class ActivityUpdateComponent {
     this.form = new FormGroup({
       id: new FormControl({ value: '', disabled: true }),
       name: new FormControl(''),
-      type: new FormControl(''),
       description: new FormControl(''),
       startedOn: new FormControl(''),
       endedOn: new FormControl(''),
@@ -56,10 +54,9 @@ export class ActivityUpdateComponent {
     this.service.getById(id).subscribe((apiData) => {
       this.id = apiData.id;
       this.name = apiData.name;
-      this.type = apiData.type;
       this.description = apiData.description;
       this.startedOn = apiData.startedOn;
-      this.startedOn = apiData.endedOn;
+      this.endedOn = apiData.endedOn;
       this.form.patchValue(apiData);
     });
   }
@@ -69,7 +66,6 @@ export class ActivityUpdateComponent {
       id: +this.form.controls['id'].value,
       name: this.form.controls['name'].value,
       description: this.form.controls['description'].value,
-      type: this.form.controls['type'].value,
       startedOn: this.form.controls['startedOn'].value,
       endedOn: this.form.controls['endedOn'].value,
     };

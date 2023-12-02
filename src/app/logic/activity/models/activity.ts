@@ -25,7 +25,6 @@ export interface ActivityRead {
 export interface ActivityUpdate {
   id: number;
   name: string;
-  type: TypeRead;
   description: string;
   startedOn: string;
   endedOn: string;
