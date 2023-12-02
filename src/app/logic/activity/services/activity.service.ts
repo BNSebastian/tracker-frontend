@@ -12,9 +12,9 @@ import { Activity, ActivityCreate, ActivityRead } from '../models/activity';
 export class ActivityService {
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
-  create(entity: ActivityCreate): Observable<ActivityCreate> {
-    const id = this.cookieService.get('userId');
-    const url = `${backendUrl.activity}/${id}`;
+  create(entity: ActivityCreate, typeId: number): Observable<ActivityCreate> {
+    const userId = this.cookieService.get('userId');
+    const url = `${backendUrl.activity}/${userId}/${typeId}`;
 
     return this.http.post<ActivityCreate>(url, entity).pipe(
       catchError((error: any) => {
@@ -23,8 +23,8 @@ export class ActivityService {
     );
   }
 
-  getAll(): Observable<Activity[]> {
-    return this.http.get<Activity[]>(backendUrl.activity);
+  getAll(): Observable<ActivityRead[]> {
+    return this.http.get<ActivityRead[]>(backendUrl.activity);
   }
 
   getById(id: number): Observable<Activity> {

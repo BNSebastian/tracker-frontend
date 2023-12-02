@@ -1,6 +1,6 @@
 import { frontendUrl } from 'src/app/_environments/frontend';
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -12,32 +12,44 @@ import { Router } from '@angular/router';
 
 import { ActivityCreate } from '../../models/activity';
 import { ActivityService } from '../../services/activity.service';
+import { TypeService } from 'src/app/logic/type/services/type.service';
 
 @Component({
   selector: 'app-activity-create',
   templateUrl: './activity-create.component.html',
   styleUrls: ['./activity-create.component.scss'],
 })
-export class ActivityCreateComponent {
+export class ActivityCreateComponent implements OnInit {
   form: FormGroup;
+  dropdownOptions?: any[];
 
   constructor(
-    private fb: FormBuilder,
     private router: Router,
-    private ActivityService: ActivityService
+    private formBuilder: FormBuilder,
+    private activityService: ActivityService,
+    private typeService: TypeService
   ) {
-    this.form = fb.group({
+    this.form = formBuilder.group({
       name: ['', Validators.required],
+      selectedId: ['', Validators.required],
+    });
+  }
+
+  ngOnInit(): void {
+    // Fetch data for the dropdown from your service
+    this.typeService.getAll().subscribe((options: any[]) => {
+      this.dropdownOptions = options;
     });
   }
 
   onSubmit() {
     if (this.form.valid) {
+      const typeId = this.form.get('selectedId')?.value;
       const activity: ActivityCreate = {
         name: this.form.value.name,
       };
 
-      this.ActivityService.create(activity).subscribe(
+      this.activityService.create(activity, typeId).subscribe(
         (response) => {
           console.log('Response body:', response);
         },

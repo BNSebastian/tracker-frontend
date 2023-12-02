@@ -1,3 +1,5 @@
+import { TypeRead } from '../../type/models/type';
+
 export interface ActivityCreate {
   name: string;
 }
@@ -10,4 +12,5 @@ export interface Activity {
 export interface ActivityRead {
   id: number;
   name: string;
+  type: TypeRead;
 }
