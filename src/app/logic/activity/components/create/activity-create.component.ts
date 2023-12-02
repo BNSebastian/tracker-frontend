@@ -34,6 +34,7 @@ export class ActivityCreateComponent implements OnInit {
       description: ['', Validators.required],
       typeId: ['', Validators.required],
       startedOn: ['', Validators.required],
+      endedOn: ['', Validators.required],
     });
   }
 
@@ -51,6 +52,7 @@ export class ActivityCreateComponent implements OnInit {
         name: this.form.value.name,
         description: this.form.value.description,
         startedOn: this.form.value.startedOn,
+        endedOn: this.form.value.endedOn,
       };
 
       this.activityService.create(activity, typeId).subscribe(

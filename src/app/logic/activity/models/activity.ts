@@ -4,6 +4,7 @@ export interface ActivityCreate {
   name: string;
   description: string;
   startedOn: string;
+  endedOn: string;
 }
 
 export interface Activity {
@@ -17,4 +18,5 @@ export interface ActivityRead {
   type: TypeRead;
   description: string;
   startedOn: string;
+  endedOn: string;
 }
