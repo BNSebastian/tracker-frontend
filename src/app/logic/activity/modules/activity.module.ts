@@ -8,6 +8,7 @@ import { ActivityCreateComponent } from '../components/create/activity-create.co
 import { ActivityListComponent } from '../components/list/activity-list.component';
 import { ActivityUpdateComponent } from '../components/update/activity-update.component';
 import { MaterialModule } from 'src/app/_modules/material.module';
+import { TimeComponent } from '../components/time/time.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MaterialModule } from 'src/app/_modules/material.module';
     ActivityCreateComponent,
     ActivityListComponent,
     ActivityUpdateComponent,
+    TimeComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -28,6 +30,7 @@ import { MaterialModule } from 'src/app/_modules/material.module';
     ActivityCreateComponent,
     ActivityListComponent,
     ActivityUpdateComponent,
+    TimeComponent,
   ],
 })
 export class ActivityModule {}
