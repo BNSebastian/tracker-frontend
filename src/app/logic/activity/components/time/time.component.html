@@ -1,0 +1,29 @@
+<ul role="list" class="divide-y divide-gray-100">
+  <li *ngFor="let item of dataArray" class="flex justify-between gap-x-6 p-10">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm font-semibold leading-6 text-gray-900">
+          Year: {{ item.year }}
+        </p>
+        <p class="text-sm font-semibold leading-6 text-gray-900">
+          Month: {{ item.month }}
+        </p>
+        <li
+          *ngFor="let activity of item.activities"
+          class="flex justify-between gap-x-6 pl-5 pt-5"
+        >
+          <div class="flex min-w-0">
+            <div class="min-w-0 flex-auto">
+              <p class="text-sm font-semibold leading-6 text-gray-900">
+                activity name: {{ activity.name }}
+              </p>
+              <p class="text-sm font-semibold leading-6 text-gray-900">
+                total time spent: {{ activity.time }} minutes
+              </p>
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </li>
+</ul>

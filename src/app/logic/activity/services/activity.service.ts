@@ -10,6 +10,7 @@ import {
   ActivityRead,
   ActivityUpdate,
 } from '../models/activity';
+import { TimeElapsed } from '../models/time';
 
 @Injectable({
   providedIn: 'root',
@@ -52,5 +53,10 @@ export class ActivityService {
         throw error;
       })
     );
+  }
+
+  getTime(): Observable<any[]> {
+    const userId = this.cookieService.get('userId');
+    return this.http.get<any[]>(`${backendUrl.getTime}/${userId}`);
   }
 }
