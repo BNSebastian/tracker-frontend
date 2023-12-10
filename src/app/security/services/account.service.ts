@@ -37,6 +37,21 @@ export class AccountService {
     return this.cookieService.check('authToken');
   }
 
+  isAdmin(): Observable<any> {
+    const userId = {
+      userId: Number(this.cookieService.get('userId')),
+    };
+
+    console.log(userId);
+
+    return this.http.post<boolean>(backendUrl.isAdmin, userId).pipe(
+      map((response: boolean) => {
+        console.log(response);
+        return response;
+      })
+    );
+  }
+
   getAuthToken() {
     return this.cookieService.get('authToken');
   }

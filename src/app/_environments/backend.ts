@@ -1,14 +1,10 @@
-export const backendUrl = {
-  home: 'http://localhost:8080/api',
-  register: '',
-  authenticate: '',
-  activity: '',
-  getTime: '',
-  type: '',
-};
+const baseUrl: String = 'http://localhost:8080/api';
 
-backendUrl.register = `${backendUrl.home}/auth/register`;
-backendUrl.authenticate = `${backendUrl.home}/auth/authenticate`;
-backendUrl.activity = `${backendUrl.home}/activity`;
-backendUrl.type = `${backendUrl.home}/type`;
-backendUrl.getTime = `${backendUrl.activity}/time`;
+export const backendUrl = {
+  register: `${baseUrl}/auth/register`,
+  authenticate: `${baseUrl}/auth/authenticate`,
+  isAdmin: `${baseUrl}/auth/isAdmin`,
+  activity: `${baseUrl}/activity`,
+  getTime: `${baseUrl}/activity/time`,
+  type: `${baseUrl}/type`,
+};

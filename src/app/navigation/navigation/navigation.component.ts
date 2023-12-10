@@ -4,7 +4,7 @@ import { map, shareReplay } from 'rxjs/operators';
 
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { frontendUrl } from 'src/app/_environments/frontend';
@@ -15,16 +15,24 @@ import { AccountService } from 'src/app/security/services/account.service';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
   navbarOpen = false;
   model: any = {};
   jwtToken: any = '';
+  isAdmin: boolean = false;
 
   constructor(
     private router: Router,
     public accountService: AccountService,
     public cookieService: CookieService
   ) {}
+
+  ngOnInit(): void {
+    this.accountService.isAdmin().subscribe((isAdmin: boolean) => {
+      this.isAdmin = isAdmin;
+      console.log(isAdmin);
+    });
+  }
 
   private breakpointObserver = inject(BreakpointObserver);
 

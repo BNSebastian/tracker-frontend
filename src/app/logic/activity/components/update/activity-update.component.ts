@@ -6,6 +6,7 @@ import { Activity, ActivityRead, ActivityUpdate } from '../../models/activity';
 import { frontendUrl } from 'src/app/_environments/frontend';
 import { TypeService } from 'src/app/logic/type/services/type.service';
 import { TypeRead } from 'src/app/logic/type/models/type';
+import { AccountService } from 'src/app/security/services/account.service';
 
 @Component({
   selector: 'app-activity-update',
@@ -15,6 +16,7 @@ import { TypeRead } from 'src/app/logic/type/models/type';
 export class ActivityUpdateComponent {
   form!: FormGroup;
   dropdownOptions?: any[];
+  isAdmin?: boolean;
 
   id?: number;
   name?: string;
