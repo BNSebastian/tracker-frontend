@@ -1,0 +1,35 @@
+<table class="min-w-full bg-white rounded-lg overflow-hidden shadow-lg border-collapse my-1">
+    <!-- Table Header -->
+    <thead>
+        <tr class="bg-indigo-600 text-white">
+            <!-- Table Headers -->
+            <th class="py-2 px-4">Name</th>
+            <th class="py-2 px-4">Type</th>
+            <th class="py-2 px-4">Description</th>
+            <th class="py-2 px-4">Started on</th>
+            <th class="py-2 px-4">Ended on</th>
+            <th class="py-2 px-4">Elapsed time</th>
+            <th class="py-2 px-4">Update</th>
+            <th class="py-2 px-4">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Table Rows - ngFor Loop -->
+        <tr *ngFor="let item of dataArray" class="text-center">
+            <!-- Table Data -->
+            <td class="py-3 px-4 border">{{ item.name }}</td>
+            <td class="py-3 px-4 border">{{ item.type.name }}</td>
+            <td class="py-3 px-4 border">{{ item.description }}</td>
+            <td class="py-3 px-4 border">{{ item.startedOn }}</td>
+            <td class="py-3 px-4 border">{{ item.endedOn }}</td>
+            <td class="py-3 px-4 border">{{ item.timeElapsedInMinutes }} minutes</td>
+            <!-- Update and Delete Actions -->
+            <td (click)="editData(item.id)" class="py-3 px-1 border cursor-pointer text-blue-500 hover:text-blue-700">
+                <span class="material-symbols-outlined">contract_edit</span>
+            </td>
+            <td (click)="deleteData(item.id)" class="py-3 px-1 border cursor-pointer text-red-500 hover:text-red-700">
+                <span class="material-symbols-outlined">delete</span>
+            </td>
+        </tr>
+    </tbody>
+</table>

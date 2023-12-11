@@ -1,5 +1,5 @@
-@import "src/app/_styles/variables.scss";
-@import "src/app/_styles/mixins.scss";
+@import "src/app/shared/styles/variables.scss";
+@import "src/app/shared/styles/mixins.scss";
 
 .login-container {
   @apply flex min-h-full flex-col justify-center px-6 py-12 lg:px-8;

@@ -1,5 +1,5 @@
-@import "src/app/_styles/variables.scss";
-@import "src/app/_styles/mixins.scss";
+@import "src/app/shared/styles/variables.scss";
+@import "src/app/shared/styles/mixins.scss";
 
 body {
   @include resetPaddingAndMargin;

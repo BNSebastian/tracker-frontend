@@ -9,14 +9,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './_modules/app-routing.module';
-import { MaterialModule } from './_modules/material.module';
+import { AppRoutingModule } from './shared/modules/app-routing.module';
+import { MaterialModule } from './shared/modules/material.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './navigation/core.module';
+import { CoreModule } from './shared/modules/navigation.module';
 import { UsersModule } from './security/modules/users.module';
 import { AuthInterceptorProvider } from './security/services/auth.interceptor';
-import { ActivityModule } from './logic/activity/modules/activity.module';
-import { TypeModule } from './logic/type/modules/type.module';
+import { ActivityModule } from './logic/modules/activity.module';
+import { TypeModule } from './logic/modules/type.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [

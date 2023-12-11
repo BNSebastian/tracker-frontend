@@ -1,6 +1,6 @@
 import { CookieService } from 'ngx-cookie-service';
 import { map, Observable, ReplaySubject } from 'rxjs';
-import { backendUrl } from 'src/app/_environments/backend';
+import { backendUrl } from 'src/app/shared/environments/backend';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';

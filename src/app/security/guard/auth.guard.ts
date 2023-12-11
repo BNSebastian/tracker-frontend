@@ -1,4 +1,4 @@
-import { frontendUrl } from 'src/app/_environments/frontend';
+import { frontendUrl } from 'src/app/shared/environments/frontend';
 
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';

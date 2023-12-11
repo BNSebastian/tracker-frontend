@@ -1,0 +1,70 @@
+@import "src/app/shared/styles/variables.scss";
+
+@mixin flexCenterColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin resetPaddingAndMargin {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin resetListStyle {
+  list-style: none;
+}
+
+@mixin button {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(
+        to right,
+        map-get($map: $themeColor, $key: secondary),
+        map-get($map: $themeColor, $key: primary),
+        map-get($map: $themeColor, $key: secondary)
+      )
+      border-box;
+  border-radius: 50em;
+  border: 4px solid transparent;
+
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  color: darkblue;
+  padding: 0.5rem 1rem;
+  margin: 1rem 1rem;
+  margin: 30px 30px 30px 30px;
+  cursor: pointer;
+}
+
+// @mixin primaryButton {
+//   font-family: map-get($map: $font, $key: body);
+//   font-size: map-get($map: $fontSize, $key: button);
+//   letter-spacing: 1.25px;
+//   font-weight: 700;
+//   border-radius: 20px;
+//   border: none;
+//   background-color: map-get($map: $themeColor, $key: primary);
+//   color: map-get($map: $fontColor, $key: "light");
+//   padding: map-get($map: $spacing, $key: medium);
+//   transition: all 0.15s ease;
+
+//   &:hover {
+//     background-color: map-get($map: $themeColor, $key: secondary);
+//     cursor: pointer;
+//   }
+// }
