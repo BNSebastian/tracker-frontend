@@ -2,14 +2,13 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from 'src/app/shared/modules/app-routing.module';
 import { ActivityComponent } from '../components/activity/activity.component';
 import { ActivityCreateComponent } from '../components/activity/create/activity-create.component';
 import { ActivityListComponent } from '../components/activity/list/activity-list.component';
 import { ActivityListAllComponent } from '../components/activity/list-all/activity-list-all.component';
 import { ActivityUpdateComponent } from '../components/activity/update/activity-update.component';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
-import { TimeComponent } from '../components/time/time.component';
+import { ActivityRoutingModule } from './activity-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,14 +17,13 @@ import { TimeComponent } from '../components/time/time.component';
     ActivityListComponent,
     ActivityListAllComponent,
     ActivityUpdateComponent,
-    TimeComponent,
   ],
   imports: [
-    AppRoutingModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    ActivityRoutingModule,
   ],
   exports: [
     ActivityComponent,
@@ -33,7 +31,6 @@ import { TimeComponent } from '../components/time/time.component';
     ActivityListComponent,
     ActivityListAllComponent,
     ActivityUpdateComponent,
-    TimeComponent,
   ],
 })
 export class ActivityModule {}

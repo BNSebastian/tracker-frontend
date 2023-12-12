@@ -9,6 +9,7 @@ import { TypeCreateComponent } from '../components/type/create/type-create.compo
 import { TypeListComponent } from '../components/type/list/type-list.component';
 import { TypeRoutingModule } from './type-routing.module';
 import { TypeUpdateComponent } from '../components/type/update/type-update.component';
+import { MaterialModule } from 'src/app/shared/modules/material.module';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,10 @@ import { TypeUpdateComponent } from '../components/type/update/type-update.compo
   ],
   imports: [
     CommonModule,
-    // routing
-    AppRoutingModule,
-    //TypeRoutingModule,
-    // forms
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
+    TypeRoutingModule,
   ],
   exports: [
     TypeComponent,

@@ -1,7 +1,8 @@
-<table class="min-w-full bg-white rounded-lg overflow-hidden shadow-lg border-collapse my-1">
+<table
+    class="min-w-full bg-white rounded-lg overflow-hidden shadow-lg border-collapse my-1">
     <!-- Table Header -->
     <thead>
-        <tr class="bg-indigo-600 text-white">
+        <tr class="bg-gray-800 text-white">
             <!-- Table Headers -->
             <th class="py-2 px-4">User</th>
             <th class="py-2 px-4">Type</th>
@@ -26,10 +27,12 @@
             <td class="py-3 px-4 border">{{ item.endedOn }}</td>
             <td class="py-3 px-4 border">{{ item.timeElapsedInMinutes }} minutes</td>
             <!-- Update and Delete Actions -->
-            <td (click)="editData(item.id)" class="py-3 px-1 border cursor-pointer text-blue-500 hover:text-blue-700">
+            <td (click)="editData(item.id)"
+                class="py-3 px-1 border cursor-pointer text-blue-500 hover:text-blue-700">
                 <span class="material-symbols-outlined">contract_edit</span>
             </td>
-            <td (click)="deleteData(item.id)" class="py-3 px-1 border cursor-pointer text-red-500 hover:text-red-700">
+            <td (click)="deleteData(item.id)"
+                class="py-3 px-1 border cursor-pointer text-red-500 hover:text-red-700">
                 <span class="material-symbols-outlined">delete</span>
             </td>
         </tr>

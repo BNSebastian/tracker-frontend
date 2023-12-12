@@ -9,7 +9,7 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { AccountService } from './account.service';
+import { AccountService } from '../services/account.service';
 
 @Injectable({
   providedIn: 'root',

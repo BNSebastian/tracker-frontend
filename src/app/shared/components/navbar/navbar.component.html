@@ -6,13 +6,31 @@
         <button type="button" aria-controls="mobile-menu" aria-expanded="false">
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
-          <svg *ngIf="!this.navbarOpen" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          <svg
+            *ngIf="!this.navbarOpen"
+            class="block h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-          <svg *ngIf="this.navbarOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <svg
+            *ngIf="this.navbarOpen"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
@@ -21,28 +39,59 @@
       <div class="desktop-menu">
         <!-- logo -->
         <div class="desktop-logo">
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+          <img
+            class="h-8 w-auto"
+            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
             alt="Your Company" />
         </div>
         <!-- links -->
         <div class="desktop-menu">
           <ng-container *ngIf="!accountService.isAuthenticated()">
-            <a [routerLink]="['']">Home</a>
-            <a [routerLink]="['/users/signup']">Register</a>
-            <a [routerLink]="['/users/login']">Login</a>
+            <a
+              [routerLink]="['']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Home</a>
+            <a
+              [routerLink]="['/users/signup']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Register</a>
+            <a
+              [routerLink]="['/users/login']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Login</a>
           </ng-container>
 
           <ng-container *ngIf="accountService.isAuthenticated()">
-            <a [routerLink]="['']">Home</a>
-            <a [routerLink]="['/activity']">Activity</a>
-            <a [routerLink]="['/time']">Time</a>
+            <a
+              [routerLink]="['']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Home</a>
+            <a
+              [routerLink]="['/activity']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Activity</a>
+            <a
+              [routerLink]="['/time']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Time</a>
 
             <span *ngIf="this.isAdmin">
-              <a [routerLink]="['/activity/listAll']" class="admin">Activities</a>
-              <a [routerLink]="['/timeForAll']" class="admin">Time</a>
+              <a
+                [routerLink]="['/activity/listAll']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}"
+                class="admin">Activities</a>
+              <a
+                [routerLink]="['time/ADMIN/getAll']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}"
+                class="admin">Time</a>
             </span>
 
-            <a [routerLink]="['/type']">Type</a>
+            <a
+              [routerLink]="['/type']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Type</a>
             <a [routerLink]="['']" (click)="logout()">Logout</a>
           </ng-container>
         </div>
@@ -53,22 +102,28 @@
   <!-- mobile menu -->
   <div *ngIf="this.navbarOpen" id="mobile-menu" class="mobile-menu">
     <ng-container *ngIf="!accountService.isAuthenticated()">
-      <a [routerLink]="['']">Home</a>
-      <a [routerLink]="['/users/signup']">Register</a>
-      <a [routerLink]="['/users/login']">Login</a>
+      <a [routerLink]="['']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/users/signup']" routerLinkActive="active">Register</a>
+      <a [routerLink]="['/users/login']" routerLinkActive="active">Login</a>
     </ng-container>
 
     <ng-container *ngIf="accountService.isAuthenticated()">
-      <a [routerLink]="['']">Home</a>
-      <a [routerLink]="['/activity']">Activity</a>
-      <a [routerLink]="['/']">Time</a>
+      <a [routerLink]="['']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/activity']" routerLinkActive="active">Activity</a>
+      <a [routerLink]="['/']" routerLinkActive="active">Time</a>
 
       <span *ngIf="this.isAdmin">
-        <a [routerLink]="['/activity/list']" class="admin">Activities</a>
-        <a [routerLink]="['/activity/listAll']" class="admin">Time</a>
+        <a
+          [routerLink]="['/activity/list']"
+          routerLinkActive="active"
+          class="admin">Activities</a>
+        <a
+          [routerLink]="['/activity/listAll']"
+          routerLinkActive="active"
+          class="admin">Time</a>
       </span>
 
-      <a [routerLink]="['/type']">Type</a>
+      <a [routerLink]="['/type']" routerLinkActive="active">Type</a>
       <a [routerLink]="['']" (click)="logout()">Logout</a>
     </ng-container>
   </div>

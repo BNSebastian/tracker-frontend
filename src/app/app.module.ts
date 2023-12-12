@@ -14,18 +14,14 @@ import { MaterialModule } from './shared/modules/material.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './shared/modules/navigation.module';
 import { UsersModule } from './security/modules/users.module';
-import { AuthInterceptorProvider } from './security/services/auth.interceptor';
-import { ActivityModule } from './logic/modules/activity.module';
+import { AuthInterceptorProvider } from './security/guard/auth.interceptor';
 import { TypeModule } from './logic/modules/type.module';
-import { TimeForAllComponent } from './logic/components/time/time-for-all/time-for-all.component';
 @NgModule({
-  declarations: [AppComponent, TimeForAllComponent],
+  declarations: [AppComponent],
   imports: [
     UsersModule,
     CoreModule,
-    ActivityModule,
     TypeModule,
-    AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
@@ -37,6 +33,7 @@ import { TimeForAllComponent } from './logic/components/time/time-for-all/time-f
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    AppRoutingModule,
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],
