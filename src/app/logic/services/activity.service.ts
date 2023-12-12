@@ -40,7 +40,7 @@ export class ActivityService {
   }
 
   getById(id: number): Observable<ActivityRead> {
-    return this.http.get<ActivityRead>(`${backendUrl.activity}/${id}`);
+    return this.http.get<ActivityRead>(`${backendUrl.activity}/getById/${id}`);
   }
 
   update(entity: ActivityUpdate): Observable<ActivityUpdate> {
@@ -64,5 +64,10 @@ export class ActivityService {
   getTime(): Observable<any[]> {
     const userId = this.cookieService.get('userId');
     return this.http.get<any[]>(`${backendUrl.getTime}/${userId}`);
+  }
+
+  getTimeForAll(): Observable<any[]> {
+    const userId = this.cookieService.get('userId');
+    return this.http.get<any[]>(`${backendUrl.getTime}/ADMIN/${userId}`);
   }
 }

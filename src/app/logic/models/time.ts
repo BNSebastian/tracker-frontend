@@ -8,3 +8,8 @@ export interface TimeElapsed {
   year: number;
   activities: Activity[];
 }
+
+export interface AllTimeElapsed {
+  user: string;
+  details: TimeElapsed[];
+}

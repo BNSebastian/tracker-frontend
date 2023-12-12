@@ -20,6 +20,7 @@ export interface ActivityRead {
   startedOn: string;
   endedOn: string;
   timeElapsedInMinutes: number;
+  user: string;
 }
 
 export interface ActivityUpdate {

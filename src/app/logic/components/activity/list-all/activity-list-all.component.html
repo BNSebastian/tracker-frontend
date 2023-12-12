@@ -3,8 +3,9 @@
     <thead>
         <tr class="bg-indigo-600 text-white">
             <!-- Table Headers -->
-            <th class="py-2 px-4">Name</th>
+            <th class="py-2 px-4">User</th>
             <th class="py-2 px-4">Type</th>
+            <th class="py-2 px-4">Name</th>
             <th class="py-2 px-4">Description</th>
             <th class="py-2 px-4">Started on</th>
             <th class="py-2 px-4">Ended on</th>
@@ -17,8 +18,9 @@
         <!-- Table Rows - ngFor Loop -->
         <tr *ngFor="let item of dataArray" class="text-center">
             <!-- Table Data -->
-            <td class="py-3 px-4 border">{{ item.name }}</td>
+            <td class="py-3 px-4 border">{{ item.user }}</td>
             <td class="py-3 px-4 border">{{ item.type.name }}</td>
+            <td class="py-3 px-4 border">{{ item.name }}</td>
             <td class="py-3 px-4 border">{{ item.description }}</td>
             <td class="py-3 px-4 border">{{ item.startedOn }}</td>
             <td class="py-3 px-4 border">{{ item.endedOn }}</td>

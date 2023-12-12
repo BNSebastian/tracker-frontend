@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { frontendUrl } from 'src/app/shared/environments/frontend';
 
 @Component({
-  selector: 'app-list-all',
+  selector: 'app-activity-list-all',
   templateUrl: './activity-list-all.component.html',
-  styleUrls: ['./activity-list-all.component.css'],
+  styleUrls: ['./activity-list-all.component.scss'],
 })
-export class ListAllComponent {
+export class ActivityListAllComponent {
   public dataArray!: ActivityRead[];
 
   constructor(
@@ -21,7 +21,7 @@ export class ListAllComponent {
   }
 
   loadData() {
-    this.ActivityService.getAll().subscribe((apiData: ActivityRead[]) => {
+    this.ActivityService.adminGetAll().subscribe((apiData: ActivityRead[]) => {
       this.dataArray = apiData;
     });
   }

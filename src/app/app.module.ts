@@ -17,8 +17,9 @@ import { UsersModule } from './security/modules/users.module';
 import { AuthInterceptorProvider } from './security/services/auth.interceptor';
 import { ActivityModule } from './logic/modules/activity.module';
 import { TypeModule } from './logic/modules/type.module';
+import { TimeForAllComponent } from './logic/components/time/time-for-all/time-for-all.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TimeForAllComponent],
   imports: [
     UsersModule,
     CoreModule,

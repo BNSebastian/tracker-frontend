@@ -35,13 +35,14 @@
           <ng-container *ngIf="accountService.isAuthenticated()">
             <a [routerLink]="['']">Home</a>
             <a [routerLink]="['/activity']">Activity</a>
+            <a [routerLink]="['/time']">Time</a>
+
+            <span *ngIf="this.isAdmin">
+              <a [routerLink]="['/activity/listAll']" class="admin">Activities</a>
+              <a [routerLink]="['/timeForAll']" class="admin">Time</a>
+            </span>
+
             <a [routerLink]="['/type']">Type</a>
-            <a [routerLink]="['/activity/time']">Time</a>
-
-            <ng-container *ngIf="this.isAdmin">
-              <a [routerLink]="['/activity/listAll']" class="admin">All time</a>
-            </ng-container>
-
             <a [routerLink]="['']" (click)="logout()">Logout</a>
           </ng-container>
         </div>
@@ -60,13 +61,14 @@
     <ng-container *ngIf="accountService.isAuthenticated()">
       <a [routerLink]="['']">Home</a>
       <a [routerLink]="['/activity']">Activity</a>
+      <a [routerLink]="['/']">Time</a>
+
+      <span *ngIf="this.isAdmin">
+        <a [routerLink]="['/activity/list']" class="admin">Activities</a>
+        <a [routerLink]="['/activity/listAll']" class="admin">Time</a>
+      </span>
+
       <a [routerLink]="['/type']">Type</a>
-      <a [routerLink]="['/activity/time']">Time</a>
-
-      <ng-container *ngIf="this.isAdmin">
-        <a [routerLink]="['/activity/listAll']" class="admin">All time</a>
-      </ng-container>
-
       <a [routerLink]="['']" (click)="logout()">Logout</a>
     </ng-container>
   </div>

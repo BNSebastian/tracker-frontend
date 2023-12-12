@@ -13,7 +13,8 @@ import { TypeCreateComponent } from '../../logic/components/type/create/type-cre
 import { TypeListComponent } from '../../logic/components/type/list/type-list.component';
 import { TypeUpdateComponent } from '../../logic/components/type/update/type-update.component';
 import { TimeComponent } from '../../logic/components/time/time.component';
-import { ListAllComponent } from '../../logic/components/activity/list-all/activity-list-all.component';
+import { ActivityListAllComponent } from '../../logic/components/activity/list-all/activity-list-all.component';
+import { TimeForAllComponent } from 'src/app/logic/components/time/time-for-all/time-for-all.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -26,8 +27,9 @@ const routes: Routes = [
   { path: 'activity', component: ActivityComponent, canActivate: [AuthGuard] },
   { path: 'activity/create', component: ActivityCreateComponent },
   { path: 'activity/list', component: ActivityListComponent },
-  { path: 'activity/listAll', component: ListAllComponent },
-  { path: 'activity/time', component: TimeComponent },
+  { path: 'activity/listAll', component: ActivityListAllComponent },
+  { path: 'time', component: TimeComponent },
+  { path: 'timeForAll', component: TimeForAllComponent },
   { path: 'activity/:id', component: ActivityUpdateComponent },
 
   // type
