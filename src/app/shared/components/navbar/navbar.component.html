@@ -2,8 +2,14 @@
   <div class="mx-auto max-w-10xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <!-- mobile menu button -->
-      <div class="mobile-menu-button" (click)="toggleNavbar()">
-        <button type="button" aria-controls="mobile-menu" aria-expanded="false">
+      <div
+        (click)="toggleNavbar()"
+        class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <button
+          type="button"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white">
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
           <svg
@@ -36,7 +42,9 @@
       </div>
 
       <!-- desktop menu -->
-      <div class="desktop-menu">
+      <div
+        class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+
         <!-- logo -->
         <div class="desktop-logo">
           <img
@@ -44,87 +52,28 @@
             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
             alt="Your Company" />
         </div>
-        <!-- links -->
-        <div class="desktop-menu">
-          <ng-container *ngIf="!accountService.isAuthenticated()">
-            <a
-              [routerLink]="['']"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{exact:true}">Home</a>
-            <a
-              [routerLink]="['/users/signup']"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{exact:true}">Register</a>
-            <a
-              [routerLink]="['/users/login']"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{exact:true}">Login</a>
-          </ng-container>
 
-          <ng-container *ngIf="accountService.isAuthenticated()">
-            <a
-              [routerLink]="['']"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{exact:true}">Home</a>
-            <a
-              [routerLink]="['/activity']"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{exact:true}">Activity</a>
-            <a
-              [routerLink]="['/time']"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{exact:true}">Time</a>
-
-            <span *ngIf="this.isAdmin">
-              <a
-                [routerLink]="['/activity/listAll']"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact:true}"
-                class="admin">Activities</a>
-              <a
-                [routerLink]="['time/ADMIN/getAll']"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact:true}"
-                class="admin">Time</a>
-            </span>
-
-            <a
-              [routerLink]="['/type']"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{exact:true}">Type</a>
-            <a [routerLink]="['']" (click)="logout()">Logout</a>
-          </ng-container>
-        </div>
+        <!-- desktop links -->
+        <app-navbar-desktop
+          [isAdmin]="isAdmin"
+          [unauthenticatedLinks]="unauthenticatedLinks"
+          [authenticatedLinks]="authenticatedLinks"
+          [adminLinks]="adminLinks">
+        </app-navbar-desktop>
       </div>
     </div>
   </div>
 
-  <!-- mobile menu -->
-  <div *ngIf="this.navbarOpen" id="mobile-menu" class="mobile-menu">
-    <ng-container *ngIf="!accountService.isAuthenticated()">
-      <a [routerLink]="['']" routerLinkActive="active">Home</a>
-      <a [routerLink]="['/users/signup']" routerLinkActive="active">Register</a>
-      <a [routerLink]="['/users/login']" routerLinkActive="active">Login</a>
-    </ng-container>
-
-    <ng-container *ngIf="accountService.isAuthenticated()">
-      <a [routerLink]="['']" routerLinkActive="active">Home</a>
-      <a [routerLink]="['/activity']" routerLinkActive="active">Activity</a>
-      <a [routerLink]="['/']" routerLinkActive="active">Time</a>
-
-      <span *ngIf="this.isAdmin">
-        <a
-          [routerLink]="['/activity/list']"
-          routerLinkActive="active"
-          class="admin">Activities</a>
-        <a
-          [routerLink]="['/activity/listAll']"
-          routerLinkActive="active"
-          class="admin">Time</a>
-      </span>
-
-      <a [routerLink]="['/type']" routerLinkActive="active">Type</a>
-      <a [routerLink]="['']" (click)="logout()">Logout</a>
-    </ng-container>
+  <!-- mobile dropdown -->
+  <div
+    *ngIf="this.navbarOpen"
+    class="sm:hidden space-y-1 px-2 pb-3 pt-2">
+    <app-navbar-mobile
+      [isAdmin]="isAdmin"
+      [unauthenticatedLinks]="unauthenticatedLinks"
+      [authenticatedLinks]="authenticatedLinks"
+      [adminLinks]="adminLinks">
+    </app-navbar-mobile>
   </div>
+
 </nav>

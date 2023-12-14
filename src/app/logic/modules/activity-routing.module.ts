@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: ActivityComponent, canActivate: [AuthGuard] },
   { path: 'create', component: ActivityCreateComponent },
   { path: 'list', component: ActivityListComponent },
-  { path: 'listAll', component: ActivityListAllComponent },
+  { path: 'ADMIN/listAll', component: ActivityListAllComponent },
   { path: ':id', component: ActivityUpdateComponent },
 ];
 

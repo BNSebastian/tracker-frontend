@@ -16,6 +16,7 @@ import { CoreModule } from './shared/modules/navigation.module';
 import { UsersModule } from './security/modules/users.module';
 import { AuthInterceptorProvider } from './security/guard/auth.interceptor';
 import { TypeModule } from './logic/modules/type.module';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

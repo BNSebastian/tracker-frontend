@@ -1,14 +1,6 @@
 @import "src/app/shared/styles/variables.scss";
 @import "src/app/shared/styles/mixins.scss";
 
-.mobile-menu-button {
-  @apply absolute inset-y-0 left-0 flex items-center sm:hidden;
-
-  button {
-    @apply relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white;
-  }
-}
-
 .mobile-menu {
   @apply sm:hidden space-y-1 px-2 pb-3 pt-2;
 
@@ -42,5 +34,5 @@
 }
 
 .active {
-  @apply bg-slate-500;
+  @apply bg-gray-600;
 }

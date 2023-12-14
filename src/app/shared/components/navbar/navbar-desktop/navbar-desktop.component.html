@@ -1,0 +1,48 @@
+ <!-- desktop menu -->
+<div
+    class="flex items-center justify-center sm:items-stretch sm:justify-start">
+    <div class="hidden sm:ml-6 sm:block space-x-4">
+        <!-- authenticated -->
+        <ng-container *ngIf="!accountService.isAuthenticated()">
+            <ng-container *ngFor="let link of unauthenticatedLinks">
+                <a
+                    [routerLink]="[link.url]"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                    {{link.name}}
+                </a>
+            </ng-container>
+        </ng-container>
+        <!-- authenticated -->
+        <ng-container *ngIf="accountService.isAuthenticated()">
+            <ng-container *ngFor="let link of authenticatedLinks">
+                <a
+                    [routerLink]="[link.url]"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                    {{link.name}}
+                </a>
+            </ng-container>
+            <!-- admin -->
+            <ng-container *ngIf="this.isAdmin">
+                <ng-container *ngFor="let link of adminLinks">
+                    <a
+                        [routerLink]="[link.url]"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}"
+                        class="hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium text-red-500 hover:text-red-500">
+                        {{link.name}}
+                    </a>
+                </ng-container>
+            </ng-container>
+
+            <a
+                (click)="logout()"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white hover:cursor-pointer rounded-md px-3 py-2 text-sm font-medium">
+                Logout
+            </a>
+        </ng-container>
+    </div>
+</div>

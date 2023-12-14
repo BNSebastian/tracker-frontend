@@ -5,17 +5,28 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 import { FooterComponent } from '../components/footer/footer.component';
-import { NavigationComponent } from '../components/navbar/navbar.component';
-
+import { NavbarComponent } from '../components/navbar/navbar.component';
+import { NavbarMobileComponent } from '../components/navbar/navbar-mobile/navbar-mobile.component';
+import { NavbarDesktopComponent } from '../components/navbar/navbar-desktop/navbar-desktop.component';
 @NgModule({
-  declarations: [NavigationComponent, FooterComponent],
+  declarations: [
+    NavbarComponent,
+    NavbarMobileComponent,
+    NavbarDesktopComponent,
+    FooterComponent,
+  ],
   imports: [
-    AppRoutingModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    AppRoutingModule,
   ],
-  exports: [NavigationComponent, FooterComponent],
+  exports: [
+    NavbarComponent,
+    NavbarMobileComponent,
+    NavbarDesktopComponent,
+    FooterComponent,
+  ],
 })
 export class CoreModule {}

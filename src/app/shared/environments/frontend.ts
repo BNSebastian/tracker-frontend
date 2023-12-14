@@ -1,19 +1,19 @@
-export const frontendUrl = {
-  home: '',
-  users: '/users',
-  logIn: '',
-  signUp: '',
-  activity: '/activity',
-  activityCreate: '',
-  activityList: '',
-  type: '/type',
-  typeCreate: '',
-  typeList: '',
-};
+const baseUrl: String = '';
 
-frontendUrl.logIn = `${frontendUrl.users}/login`;
-frontendUrl.signUp = `${frontendUrl.users}/signUp`;
-frontendUrl.activityCreate = `${frontendUrl.activity}/create`;
-frontendUrl.activityList = `${frontendUrl.activity}/list`;
-frontendUrl.typeCreate = `${frontendUrl.type}/create`;
-frontendUrl.typeList = `${frontendUrl.type}/list`;
+export const frontendUrl = {
+  home: `${baseUrl}`,
+  signUp: `${baseUrl}/users/signup`,
+  logIn: `${baseUrl}/users/login`,
+
+  activity: `${baseUrl}/activity`,
+  activityCreate: `${baseUrl}/activity/create`,
+  activityList: `${baseUrl}/activity/list`,
+  activityListAll: `${baseUrl}/activity/ADMIN/listAll`,
+
+  type: `${baseUrl}/type`,
+  typeCreate: `${baseUrl}/type/create`,
+  typeList: `${baseUrl}/type/list`,
+
+  time: `${baseUrl}/time`,
+  timeGetAll: `${baseUrl}/time/ADMIN/getAll`,
+};
