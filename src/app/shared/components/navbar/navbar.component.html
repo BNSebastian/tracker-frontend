@@ -1,15 +1,17 @@
 <nav class="bg-gray-800">
-  <div class="mx-auto max-w-10xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-16 items-center justify-between">
+  <div class="mx-auto max-w-fit px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-center">
       <!-- mobile menu button -->
       <div
         (click)="toggleNavbar()"
-        class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        class="inset-y-0 left-0 flex items-center sm:hidden"
+      >
         <button
           type="button"
           aria-controls="mobile-menu"
           aria-expanded="false"
-          class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white">
+          class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white"
+        >
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
           <svg
@@ -19,11 +21,13 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            aria-hidden="true">
+            aria-hidden="true"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
           </svg>
           <svg
             *ngIf="this.navbarOpen"
@@ -32,48 +36,49 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            aria-hidden="true">
+            aria-hidden="true"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12" />
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
       </div>
 
+      <!-- logo -->
+      <div class="flex flex-shrink-0 items-center">
+        <img
+          class="h-8 w-auto"
+          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+          alt="Your Company"
+        />
+      </div>
+
       <!-- desktop menu -->
       <div
-        class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-
-        <!-- logo -->
-        <div class="desktop-logo">
-          <img
-            class="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            alt="Your Company" />
-        </div>
-
-        <!-- desktop links -->
+        class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+      >
         <app-navbar-desktop
           [isAdmin]="isAdmin"
           [unauthenticatedLinks]="unauthenticatedLinks"
           [authenticatedLinks]="authenticatedLinks"
-          [adminLinks]="adminLinks">
+          [adminLinks]="adminLinks"
+        >
         </app-navbar-desktop>
       </div>
     </div>
   </div>
 
   <!-- mobile dropdown -->
-  <div
-    *ngIf="this.navbarOpen"
-    class="sm:hidden space-y-1 px-2 pb-3 pt-2">
+  <div *ngIf="this.navbarOpen">
     <app-navbar-mobile
       [isAdmin]="isAdmin"
       [unauthenticatedLinks]="unauthenticatedLinks"
       [authenticatedLinks]="authenticatedLinks"
-      [adminLinks]="adminLinks">
+      [adminLinks]="adminLinks"
+    >
     </app-navbar-mobile>
   </div>
-
 </nav>

@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './shared/modules/app-routing.module';
 import { MaterialModule } from './shared/modules/material.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './shared/modules/navigation.module';
+import { SharedModule } from './shared/modules/shared.module';
 import { UsersModule } from './security/modules/users.module';
 import { AuthInterceptorProvider } from './security/guard/auth.interceptor';
 import { TypeModule } from './logic/modules/type.module';
@@ -21,7 +21,7 @@ import { TypeModule } from './logic/modules/type.module';
   declarations: [AppComponent],
   imports: [
     UsersModule,
-    CoreModule,
+    SharedModule,
     TypeModule,
     FormsModule,
     BrowserAnimationsModule,

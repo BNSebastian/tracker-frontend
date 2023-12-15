@@ -1,6 +1,6 @@
  <!-- desktop menu -->
 <div
-    class="flex items-center justify-center sm:items-stretch sm:justify-start">
+    class="flex items-center justify-between sm:items-stretch sm:justify-start">
     <div class="hidden sm:ml-6 sm:block space-x-4">
         <!-- authenticated -->
         <ng-container *ngIf="!accountService.isAuthenticated()">
@@ -37,7 +37,7 @@
                     </a>
                 </ng-container>
             </ng-container>
-
+            <!-- logout -->
             <a
                 (click)="logout()"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white hover:cursor-pointer rounded-md px-3 py-2 text-sm font-medium">

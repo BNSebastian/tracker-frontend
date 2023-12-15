@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from '../../logic/components/home/home.component';
+import { HomeComponent } from '../components/home/home.component';
 import { PageNotFoundComponent } from '../../security/components/page-not-found/page-not-found.component';
 import { AuthGuard } from '../../security/guard/auth.guard';
 

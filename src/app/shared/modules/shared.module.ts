@@ -8,8 +8,11 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { NavbarMobileComponent } from '../components/navbar/navbar-mobile/navbar-mobile.component';
 import { NavbarDesktopComponent } from '../components/navbar/navbar-desktop/navbar-desktop.component';
+import { HomeComponent } from '../components/home/home.component';
+
 @NgModule({
   declarations: [
+    HomeComponent,
     NavbarComponent,
     NavbarMobileComponent,
     NavbarDesktopComponent,
@@ -23,10 +26,11 @@ import { NavbarDesktopComponent } from '../components/navbar/navbar-desktop/navb
     AppRoutingModule,
   ],
   exports: [
+    HomeComponent,
     NavbarComponent,
     NavbarMobileComponent,
     NavbarDesktopComponent,
     FooterComponent,
   ],
 })
-export class CoreModule {}
+export class SharedModule {}
